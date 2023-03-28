@@ -5,6 +5,7 @@ import cors from 'cors';
 import defaultRoute from '@/routes/DefaultRoute';
 import express from 'express';
 import helmet from 'helmet';
+import { messageRoute } from '@/routes/Message';
 
 const defaultPort = 3000;
 dotEnv.config();
@@ -26,6 +27,7 @@ app.use(
 );
 
 app.get('/', defaultRoute);
+app.post('/message', messageRoute);
 
 /*
  * Sample routes
