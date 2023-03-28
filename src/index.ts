@@ -10,8 +10,9 @@ const defaultPort = 3000;
 dotEnv.config();
 
 const app = express();
-const port = (process.env.PORT as string) !== '' || defaultPort;
-const host = (process.env.HOST as string) !== '' || '0.0.0.0';
+const port =
+  (process.env.PORT as string) !== '' ? process.env.PORT : defaultPort;
+const host = (process.env.HOST as string) !== '' ? process.env.HOST : '0.0.0.0';
 const allowedOrigins = ['http://localhost'];
 
 app.use(helmet());

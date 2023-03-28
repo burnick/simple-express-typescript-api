@@ -5,7 +5,7 @@ const router: Router = express.Router();
 
 router.get('/', (__, res: Response) => {
   try {
-    res.json({ message: `Welcome to default api route` });
+    res.status(200).json({ message: `Welcome to default api route` });
   } catch (evt: unknown) {
     handleError({ evt, res });
   }
